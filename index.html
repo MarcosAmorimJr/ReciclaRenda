@@ -1,258 +1,501 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReciclaRenda - Transforme resíduos em renda</title>
+    <title>ReciclaRenda - Transforme seu lixo em dinheiro</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♻️</text></svg>">
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-recycle"></i>
-                <h1>ReciclaRenda</h1>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-recycle"></i>
+                    <span>ReciclaRenda</span>
+                </div>
+
+                <nav class="nav" id="nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link">Início</a></li>
+                        <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+                        <li><a href="#residuos" class="nav-link">Resíduos</a></li>
+                        <li><a href="#simulador" class="nav-link">Simulador</a></li>
+                        <li><a href="#pontos" class="nav-link">Pontos</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <div class="auth-section">
+                    <button class="btn btn-outline" onclick="showModal('login-modal')">Entrar</button>
+                    <button class="btn btn-primary" onclick="showModal('register-modal')">Cadastrar</button>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#como-funciona">Como funciona</a></li>
-                    <li><a href="#beneficios">Benefícios</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <button class="btn btn-outline">Entrar</button>
-                <button class="btn btn-primary">Cadastrar</button>
-            </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Transforme seu lixo em dinheiro e ajude o planeta</h2>
-                    <p>Descarte corretamente seus resíduos, ganhe dinheiro e contribua para um mundo mais sustentável.</p>
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary btn-large">Começar agora</button>
-                        <button class="btn btn-outline btn-large">Saiba mais</button>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="images/hero-image.png" alt="Pessoas reciclando">
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">Funcionalidades Principais</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <h3>Pontos de Coleta</h3>
-                        <p>Encontre os locais mais próximos para descartar cada tipo de resíduo.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </div>
-                        <h3>Geração de Renda</h3>
-                        <p>Venda seus recicláveis diretamente para catadores e cooperativas.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3>Agendamento</h3>
-                        <p>Agende a coleta de resíduos volumosos em sua casa.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Seu Impacto</h3>
-                        <p>Acompanhe o impacto ambiental positivo do seu descarte.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="how-it-works" class="how-it-works">
-            <div class="container">
-                <h2 class="section-title">Como Funciona</h2>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Cadastre-se</h3>
-                            <p>Crie sua conta gratuitamente e informe seus dados básicos.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Selecione o resíduo</h3>
-                            <p>Escolha o tipo de material que deseja descartar ou vender.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Escolha a opção</h3>
-                            <p>Venda para catadores, agende coleta ou encontre pontos de descarte.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Ganhe e contribua</h3>
-                            <p>Receba seu dinheiro e veja seu impacto ambiental positivo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="waste-types" class="waste-types">
-            <div class="container">
-                <h2 class="section-title">Tipos de Resíduos</h2>
-                <div class="waste-grid">
-                    <div class="waste-card">
-                        <div class="waste-icon">
-                            <i class="fas fa-couch"></i>
-                        </div>
-                        <h3>Móveis</h3>
-                        <p>Agende coleta ou encontre pontos para doação/reuso.</p>
-                    </div>
-                    <div class="waste-card">
-                        <div class="waste-icon">
-                            <i class="fas fa-tv"></i>
-                        </div>
-                        <h3>Eletrônicos</h3>
-                        <p>Logística reversa e pontos de coleta especializados.</p>
-                    </div>
-                    <div class="waste-card">
-                        <div class="waste-icon">
-                            <i class="fas fa-box-open"></i>
-                        </div>
-                        <h3>Papel/Papelão</h3>
-                        <p>Venda para cooperativas ou encontre PEVs próximos.</p>
-                    </div>
-                    <div class="waste-card">
-                        <div class="waste-icon">
-                            <i class="fas fa-wine-bottle"></i>
-                        </div>
-                        <h3>Vidro</h3>
-                        <p>Pontos de entrega voluntária e compradores.</p>
-                    </div>
-                    <div class="waste-card">
-                        <div class="waste-icon">
-                            <i class="fas fa-prescription-bottle"></i>
-                        </div>
-                        <h3>Plástico</h3>
-                        <p>Recicladores especializados e preços atualizados.</p>
-                    </div>
-                    <div class="waste-card">
-                        <div class="waste-icon">
-                            <i class="fas fa-apple-alt"></i>
-                        </div>
-                        <h3>Orgânicos</h3>
-                        <p>Compostagem domiciliar e coleta comunitária.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <h2 class="section-title">O que dizem nossos usuários</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Graças ao ReciclaRenda consegui ganhar uma renda extra vendendo meus recicláveis e ainda contribuir com o meio ambiente."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Maria Silva</h4>
-                                <p>Usuária desde 2023</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Como catador, o aplicativo me ajudou a aumentar minha produtividade e encontrar mais materiais de qualidade."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>João Santos</h4>
-                                <p>Catador parceiro</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="cta" class="cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Pronto para transformar seus resíduos em renda?</h2>
-                    <p>Junte-se a milhares de pessoas que já estão fazendo a diferença.</p>
-                    <button class="btn btn-primary btn-large">Comece agora</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="logo">
-                        <i class="fas fa-recycle"></i>
-                        <h3>ReciclaRenda</h3>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforme seu <span class="highlight">lixo</span> em <span class="highlight">dinheiro</span></h1>
+                    <p class="hero-subtitle">Descarte corretamente seus resíduos, ganhe dinheiro e contribua para um mundo mais sustentável.</p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15847">0</div>
+                            <div class="stat-label">Usuários Ativos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="89523">0</div>
+                            <div class="stat-label">Kg Reciclados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="456789">0</div>
+                            <div class="stat-label">R$ Gerados</div>
+                        </div>
                     </div>
-                    <p>Transformando resíduos em recursos valiosos e promovendo a sustentabilidade.</p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToSection('simulador')">
+                            <i class="fas fa-calculator"></i>
+                            Simular Ganhos
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="scrollToSection('como-funciona')">
+                            <i class="fas fa-play"></i>
+                            Como Funciona
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-circle">
+                        <div class="floating-icon" style="top: 20%; left: 20%;">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div class="floating-icon" style="top: 20%; right: 20%;">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="floating-icon" style="bottom: 20%; left: 20%;">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="floating-icon" style="bottom: 20%; right: 20%;">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="center-logo">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Por que escolher o ReciclaRenda?</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Ganhe Dinheiro</h3>
+                    <p>Transforme seus resíduos em renda extra. Preços competitivos e pagamento via Pix.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Pontos Próximos</h3>
+                    <p>Encontre pontos de coleta e compradores perto de você com nossa ferramenta de localização.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Coleta Agendada</h3>
+                    <p>Agende a retirada de materiais volumosos direto na sua casa, sem complicações.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Impacto Ambiental</h3>
+                    <p>Acompanhe sua contribuição para o meio ambiente e veja o CO₂ que você ajudou a economizar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Cadastre-se Grátis</h3>
+                        <p>Crie sua conta em menos de 2 minutos. É gratuito e seguro!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Selecione seu Material</h3>
+                        <p>Escolha o tipo de resíduo que você tem e veja quanto pode ganhar.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Encontre Compradores</h3>
+                        <p>Use nosso mapa para encontrar catadores e empresas próximos.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Venda e Ganhe</h3>
+                        <p>Combine preço, local e horário. Receba via Pix na hora!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waste Types Section -->
+    <section id="residuos" class="waste-types">
+        <div class="container">
+            <h2 class="section-title">Tipos de Resíduos</h2>
+
+            <div class="waste-grid">
+                <div class="waste-card" onclick="selectWasteType('papel')">
+                    <div class="waste-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Papel/Papelão</h3>
+                    <p>Jornais, revistas, caixas</p>
+                    <div class="price-range">R$ 0,30 - 0,80/kg</div>
+                    <div class="co2-info">3,2 kg CO₂ economizado por kg</div>
+                </div>
+
+                <div class="waste-card" onclick="selectWasteType('plastico')">
+                    <div class="waste-icon">
+                        <i class="fas fa-bottle-water"></i>
+                    </div>
+                    <h3>Plástico</h3>
+                    <p>Garrafas PET, embalagens</p>
+                    <div class="price-range">R$ 0,50 - 2,00/kg</div>
+                    <div class="co2-info">2,8 kg CO₂ economizado por kg</div>
+                </div>
+
+                <div class="waste-card" onclick="selectWasteType('metal')">
+                    <div class="waste-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Metal</h3>
+                    <p>Latas de alumínio, ferro</p>
+                    <div class="price-range">R$ 2,00 - 8,00/kg</div>
+                    <div class="co2-info">8,1 kg CO₂ economizado por kg</div>
+                </div>
+
+                <div class="waste-card" onclick="selectWasteType('vidro')">
+                    <div class="waste-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>Vidro</h3>
+                    <p>Garrafas, potes, frascos</p>
+                    <div class="price-range">R$ 0,10 - 0,30/kg</div>
+                    <div class="co2-info">1,2 kg CO₂ economizado por kg</div>
+                </div>
+
+                <div class="waste-card" onclick="selectWasteType('eletronicos')">
+                    <div class="waste-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Eletrônicos</h3>
+                    <p>Celulares, computadores</p>
+                    <div class="price-range">R$ 5,00 - 50,00/kg</div>
+                    <div class="co2-info">25,5 kg CO₂ economizado por kg</div>
+                </div>
+
+                <div class="waste-card" onclick="selectWasteType('moveis')">
+                    <div class="waste-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Móveis</h3>
+                    <p>Sofás, mesas, cadeiras</p>
+                    <div class="price-range">R$ 15 - 200/item</div>
+                    <div class="co2-info">Doação ou reuso</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulador Section -->
+    <section id="simulador" class="simulator">
+        <div class="container">
+            <h2 class="section-title">Simule seus Ganhos</h2>
+            <div class="simulator-card">
+                <div class="simulator-form">
+                    <div class="form-group">
+                        <label>Tipo de Material</label>
+                        <select id="material-select" onchange="updateSimulation()">
+                            <option value="">Selecione o material</option>
+                            <option value="papel" data-price="0.55">Papel/Papelão - R$ 0,55/kg</option>
+                            <option value="plastico" data-price="1.25">Plástico PET - R$ 1,25/kg</option>
+                            <option value="metal" data-price="5.50">Alumínio - R$ 5,50/kg</option>
+                            <option value="vidro" data-price="0.20">Vidro - R$ 0,20/kg</option>
+                            <option value="eletronicos" data-price="25.00">Eletrônicos - R$ 25,00/kg</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" id="weight-input" placeholder="0" min="0" step="0.1" oninput="updateSimulation()">
+                    </div>
+
+                    <div class="simulation-result">
+                        <div class="result-item">
+                            <span class="label">Valor Total:</span>
+                            <span class="value" id="total-value">R$ 0,00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">CO₂ Economizado:</span>
+                            <span class="value" id="co2-saved">0 kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="simulator-visual">
+                    <div class="money-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <p>Venda seus materiais e contribua para um planeta mais sustentável!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="pontos" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Pontos de Coleta Próximos</h2>
+
+            <div class="map-filters">
+                <button class="filter-btn active" onclick="filterPoints('all')">Todos</button>
+                <button class="filter-btn" onclick="filterPoints('cooperativas')">Cooperativas</button>
+                <button class="filter-btn" onclick="filterPoints('empresas')">Empresas</button>
+                <button class="filter-btn" onclick="filterPoints('catadores')">Catadores</button>
+            </div>
+
+            <div class="location-search">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Digite seu CEP ou cidade..." id="location-input">
+                    <button onclick="searchLocation()">Buscar</button>
+                </div>
+            </div>
+
+            <div class="points-grid" id="points-container">
+                <!-- Pontos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Tem dúvidas? Quer se tornar um parceiro? Fale conosco!</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@reciclarenda.com.br</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(11) 9 9999-9999</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>São Paulo, SP - Brasil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form onsubmit="submitContact(event)">
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Entrar na Plataforma</h2>
+                <span class="modal-close" onclick="hideModal('login-modal')">&times;</span>
+            </div>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" required placeholder="Sua senha">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                <p class="modal-switch">
+                    Não tem conta? <a href="#" onclick="switchModal('login-modal', 'register-modal')">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Criar Conta</h2>
+                <span class="modal-close" onclick="hideModal('register-modal')">&times;</span>
+            </div>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" required placeholder="Seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required placeholder="seu@email.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="tel" required placeholder="(11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label>CEP</label>
+                        <input type="text" required placeholder="00000-000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de Usuário</label>
+                    <select required>
+                        <option value="">Selecione</option>
+                        <option value="gerador">Tenho resíduos para vender</option>
+                        <option value="catador">Sou catador/cooperativa</option>
+                        <option value="empresa">Sou empresa de reciclagem</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" required placeholder="Mínimo 6 caracteres">
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" required id="terms">
+                    <label for="terms">Aceito os termos de uso e política de privacidade</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Criar Conta</button>
+                <p class="modal-switch">
+                    Já tem conta? <a href="#" onclick="switchModal('register-modal', 'login-modal')">Faça login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        <span>ReciclaRenda</span>
+                    </div>
+                    <p>Transformando resíduos em oportunidades para um futuro mais sustentável.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
+
+                <div class="footer-section">
+                    <h4>Plataforma</h4>
                     <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#como-funciona">Como funciona</a></li>
-                        <li><a href="#beneficios">Benefícios</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#residuos">Tipos de Resíduos</a></li>
+                        <li><a href="#simulador">Simulador</a></li>
+                        <li><a href="#pontos">Pontos de Coleta</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
+
+                <div class="footer-section">
+                    <h4>Suporte</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> contato@ReciclaRenda.com</li>
-                        <li><i class="fas fa-phone"></i> (21) 99025-5915</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Teresópolis, Brasil</li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Para Empresas</h4>
+                    <ul>
+                        <li><a href="#">Seja um Parceiro</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Soluções Corporativas</a></li>
+                        <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 ReciclaRenda. Todos os direitos reservados.</p>
             </div>
@@ -260,87 +503,5 @@
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- Modal de Login -->
-<div id="loginModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Entrar no ReciclaRenda</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="loginEmail">E-mail</label>
-                <input type="email" id="loginEmail" required>
-            </div>
-            <div class="form-group">
-                <label for="loginPassword">Senha</label>
-                <input type="password" id="loginPassword" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Entrar</button>
-            <p class="form-footer">Não tem conta? <a href="#" id="showRegister">Cadastre-se</a></p>
-        </form>
-    </div>
-</div>
-
-<!-- Modal de Cadastro -->
-<div id="registerModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Criar conta no ReciclaRenda</h2>
-        <form id="registerForm">
-            <div class="form-group">
-                <label for="registerName">Nome completo</label>
-                <input type="text" id="registerName" required>
-            </div>
-            <div class="form-group">
-                <label for="registerEmail">E-mail</label>
-                <input type="email" id="registerEmail" required>
-            </div>
-            <div class="form-group">
-                <label for="registerPassword">Senha</label>
-                <input type="password" id="registerPassword" required>
-            </div>
-            <div class="form-group">
-                <label for="registerType">Tipo de conta</label>
-                <select id="registerType" required>
-                    <option value="">Selecione...</option>
-                    <option value="user">Gerador de resíduos</option>
-                    <option value="collector">Catador/Cooperativa</option>
-                    <option value="company">Empresa de reciclagem</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-            <p class="form-footer">Já tem conta? <a href="#" id="showLogin">Faça login</a></p>
-        </form>
-    </div>
-</div>
-
-<section id="mapa" class="map-section">
-    <div class="container">
-        <h2 class="section-title">Encontre Pontos de Coleta</h2>
-        <div class="map-filter">
-            <select id="filterMaterial">
-                <option value="all">Todos os materiais</option>
-                <option value="paper">Papel/Papelão</option>
-                <option value="plastic">Plástico</option>
-                <option value="glass">Vidro</option>
-                <option value="metal">Metal</option>
-                <option value="electronic">Eletrônicos</option>
-                <option value="furniture">Móveis</option>
-                <option value="organic">Orgânicos</option>
-            </select>
-            <button id="useLocation" class="btn btn-outline">
-                <i class="fas fa-location-arrow"></i> Minha localização
-            </button>
-        </div>
-        <div id="map" class="map-container">
-            <!-- Mapa será renderizado aqui via JavaScript -->
-            <div class="map-placeholder">
-                <i class="fas fa-map-marked-alt"></i>
-                <p>Carregando mapa...</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 </body>
 </html>
