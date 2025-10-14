@@ -326,47 +326,58 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contato" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Entre em Contato</h2>
-                    <p>Tem dúvidas? Quer se tornar um parceiro? Fale conosco!</p>
-
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contato@reciclarenda.com.br</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(11) 9 9999-9999</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>São Paulo, SP - Brasil</span>
-                        </div>
+    <div class="container">
+        <h2 class="section-title">Entre em Contato ❤️</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Fale Conosco</h2>
+                <p>Tem dúvidas? Quer se tornar um parceiro? Estamos aqui para ajudar!</p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(21) 98697-6714</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>marcosamorimjr@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Teresópolis, RJ</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Feito com Amor ❤️</span>
                     </div>
                 </div>
-
-                <div class="contact-form">
-                    <form onsubmit="submitContact(event)">
-                        <div class="form-group">
-                            <input type="text" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Seu email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
-                    </form>
-                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Assunto</label>
+                        <input type="text" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Modals -->
     <div id="login-modal" class="modal">
